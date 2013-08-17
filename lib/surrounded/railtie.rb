@@ -3,7 +3,7 @@ require "surrounded"
 require "rails"
 module Surrounded
   class Railtie < ::Rails::Railtie
-    after_initialize do
+    initializer 'surrounded.active_record' do |app|
       ActiveRecord::Base.class_eval {
         include Surrounded
 
