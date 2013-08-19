@@ -4,14 +4,11 @@ require "rails"
 module Surrounded
   class Railtie < ::Rails::Railtie
     initializer 'surrounded.active_record' do |app|
+      ActiveRecord::Base.send(:include, ::Surrounded)
       ActiveRecord::Base.class_eval {
-        include Surrounded
-
-        after_initialize :__setup_surrounded
-
-        def __setup_surrounded
-          Surrounded.create_surroundings(self)
-        end
+        define_method(:surroundings){
+          @__surroundings__ ||= []
+        }
       }
     end
   end
