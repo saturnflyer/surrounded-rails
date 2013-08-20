@@ -6,21 +6,18 @@ module Surrounded
     initializer 'surrounded.active_record' do |app|
       ActiveRecord::Base.send(:include, ::Surrounded)
       ActiveRecord::Base.class_eval {
-        # Ideally this should hook into the initialization process
-        # and set the @__surroundings__ collection there.
-        # Currently I haven't found a way to do that.
-        #
-        # Surrounded uses respond_to_missing? and method_missing
-        # which are two methods used when an ActiveRecord object
-        # is initialized.
-        #
-        # The after_initialize callback happens after those methods
-        # are used.
-        #
-        define_method(:surroundings){
-          @__surroundings__ ||= []
-        }
-        private :surroundings
+        # This relies on a private method (present in Rails 3 and 4)
+        # because there is no earlier hook to set this variable.
+        # The after_initialize callback occurs to late because
+        # the initialize method has a procedure which calls
+        # respond_to? and Surrounded adds respond_to_missing?
+        # to get information from the context (which is the first
+        # item in the @surroundings collection).
+        def init_internals_with_surrounded
+          @surroundings = []
+          init_internals_without_surrounded
+        end
+        alias_method_chain :init_internals, :surrounded
       }
     end
   end
