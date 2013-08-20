@@ -20,6 +20,7 @@ module Surrounded
         define_method(:surroundings){
           @__surroundings__ ||= []
         }
+        private :surroundings
       }
     end
   end
