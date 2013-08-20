@@ -12,7 +12,7 @@ module Surrounded
         # the initialize method has a procedure which calls
         # respond_to? and Surrounded adds respond_to_missing?
         # to get information from the context (which is the first
-        # item in the @surroundings collection).
+        # item in the @__surroundings__ collection).
         def init_internals_with_surrounded
           Surrounded.create_surroundings(self)
           init_internals_without_surrounded
