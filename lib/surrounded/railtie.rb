@@ -14,7 +14,7 @@ module Surrounded
         # to get information from the context (which is the first
         # item in the @surroundings collection).
         def init_internals_with_surrounded
-          @surroundings = []
+          Surrounded.create_surroundings(self)
           init_internals_without_surrounded
         end
         alias_method_chain :init_internals, :surrounded
