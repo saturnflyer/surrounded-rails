@@ -4,8 +4,8 @@ require "rails"
 module Surrounded
   class Railtie < ::Rails::Railtie
     initializer 'surrounded.active_record' do |app|
-      ActiveRecord::Base.send(:include, ::Surrounded)
       ActiveRecord::Base.class_eval {
+        include Surrounded
         # This relies on a private method (present in Rails 3 and 4)
         # because there is no earlier hook to set this variable.
         # The after_initialize callback occurs to late because
