@@ -19,7 +19,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add it to your Gemfile and start using it. See [Surrounded](https://github.com/saturnflyer/surrounded) for more details.
 
 ## Contributing
 
