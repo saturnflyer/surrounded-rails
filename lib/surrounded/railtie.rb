@@ -20,5 +20,9 @@ module Surrounded
         alias_method_chain :init_internals, :surrounded
       }
     end
+
+    initializer 'surrounded.action_controller' do |app|
+      ActionController::Base.send(:include, Surrounded)
+    end
   end
 end
