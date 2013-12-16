@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Surrounded::Rails::VERSION
   spec.authors       = ["'Jim Gay'"]
   spec.email         = ["jim@saturnflyer.com"]
-  spec.description   = %q{This sets up your ActiveRecord models to use Surrounded}
-  spec.summary       = %q{This sets up your ActiveRecord models to use Surrounded}
+  spec.description   = %q{This sets up your ActiveRecord and ActionController objects to use Surrounded}
+  spec.summary       = %q{This sets up your ActiveRecord and ActionController objects to use Surrounded}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "surrounded", "~> 0.5.0"
+  spec.add_dependency "surrounded", "~> 0.6.0"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
