@@ -3,8 +3,16 @@ require "surrounded"
 require "rails"
 module Surrounded
   class Railtie < ::Rails::Railtie
-    initializer 'surrounded.active_record' do |app|
-      ActiveRecord::Base.send(:include, Surrounded)
+    if defined?(ActiveRecord)
+      initializer 'surrounded.active_record' do |app|
+        ActiveRecord::Base.send(:include, Surrounded)
+      end
+    end
+
+    if defined?(Mongoid)
+      initializer 'surrounded.mongoid' do |app|
+        Mongoid::Document.send(:include, Surrounded)
+      end
     end
 
     initializer 'surrounded.action_controller' do |app|

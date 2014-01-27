@@ -1,6 +1,6 @@
 # Surrounded::Rails
 
-This sets up your ActiveRecord models and ActionController controllers to use [Surrounded](http://github.com/saturnflyer/surrounded).
+This sets up your ActiveRecord and/or Mongoid models and ActionController controllers to use [Surrounded](http://github.com/saturnflyer/surrounded).
 Support for non-ActiveRecord will be added.
 
 ## Installation
