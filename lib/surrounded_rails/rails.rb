@@ -1,0 +1,1 @@
+require 'surrounded_rails/railtie' if defined?(::Rails)
