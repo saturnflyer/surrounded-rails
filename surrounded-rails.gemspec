@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = SurroundedRails::VERSION
   spec.authors       = ["'Jim Gay'"]
   spec.email         = ["jim@saturnflyer.com"]
-  spec.description   = %q{This sets up your ActiveRecord and ActionController objects to use Surrounded}
-  spec.summary       = %q{This sets up your ActiveRecord and ActionController objects to use Surrounded}
+  spec.description   = %q{This sets up your ActiveRecord/Mongoid and ActionController objects to use Surrounded}
+  spec.summary       = %q{This sets up your ActiveRecord/Mongoid and ActionController objects to use Surrounded}
   spec.homepage      = ""
   spec.license       = "MIT"
 
