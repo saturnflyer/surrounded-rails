@@ -5,7 +5,7 @@ require 'surrounded_rails/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "surrounded-rails"
-  spec.version       = Surrounded::Rails::VERSION
+  spec.version       = SurroundedRails::VERSION
   spec.authors       = ["'Jim Gay'"]
   spec.email         = ["jim@saturnflyer.com"]
   spec.description   = %q{This sets up your ActiveRecord and ActionController objects to use Surrounded}
