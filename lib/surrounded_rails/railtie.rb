@@ -18,5 +18,9 @@ module SurroundedRails
     initializer 'surrounded_rails.action_controller' do |app|
       ActionController::Base.send(:include, Surrounded)
     end
+
+    initializer 'surrounded_rails.action_view' do |app|
+      ActionView::Base.send(:include, Surrounded)
+    end
   end
 end
