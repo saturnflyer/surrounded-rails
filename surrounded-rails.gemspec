@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "surrounded", "~> 0.9.0"
+  spec.add_dependency "surrounded", "~> 0.9.3"
 
   spec.add_development_dependency "rake"
 end
